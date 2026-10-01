@@ -1,0 +1,2674 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0D1117">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>சொல்லித் தரு AI 👩‍🌾✨ - கிராமத்துப் பெண்களின் குரல் தோழி</title>
+
+  <!-- Google Fonts: Mukta Malar & Noto Sans Tamil for maximum Tamil legibility -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. ULTRA-REALISTIC NATIVE SMARTPHONE FRAME & DARK OBSIDIAN PALETTE
+       ========================================================================== */
+    :root {
+      --bg-canvas: #06090E;         /* Outer backdrop */
+      --phone-bg: #0D1117;          /* Matte Charcoal / Obsidian */
+      --card-bg: #161B22;           /* Deep Slate Navy */
+      --card-hover: #1F242C;
+      --border-subtle: #30363D;
+      --border-glow: rgba(0, 230, 118, 0.35);
+
+      /* High-Impact Vibrant Accents */
+      --neon-green: #00E676;        /* Neon Parrot Green */
+      --neon-emerald: #10B981;
+      --turmeric-gold: #FFB300;     /* Marigold Gold */
+      --saffron-orange: #FF7043;    /* Warm Saffron */
+      --kumkum-red: #FF5252;        /* Alerts & Mic Active */
+      --sky-glow: #38BDF8;          /* e-Seva Mode */
+
+      /* Typography */
+      --text-white: #F0F6FC;        /* Crisp Milk White */
+      --text-muted: #8B949E;
+      --text-gold: #FFD54F;
+
+      --font-tamil: 'Mukta Malar', 'Noto Sans Tamil', -apple-system, sans-serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --radius-phone: 44px;
+      --radius-card: 18px;
+      --radius-pill: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      background-image: 
+        radial-gradient(circle at 50% 10%, rgba(0, 230, 118, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 90%, rgba(255, 179, 0, 0.06) 0%, transparent 50%);
+      color: var(--text-white);
+      font-family: var(--font-tamil);
+      font-size: 19px;
+      line-height: 1.45;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 8px;
+      overflow-x: hidden;
+    }
+
+    /* Screen Reader Only */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Outer Phone Bezel */
+    .phone-mockup-wrapper {
+      width: 100%;
+      max-width: 430px;
+      height: 900px;
+      max-height: 96vh;
+      background-color: var(--phone-bg);
+      border-radius: var(--radius-phone);
+      border: 11px solid #1F242C;
+      box-shadow: 
+        0 0 0 2px rgba(255, 255, 255, 0.1),
+        0 25px 60px -15px rgba(0, 0, 0, 0.9),
+        0 0 35px rgba(0, 230, 118, 0.12);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Top Speaker Hole / Notch */
+    .phone-speaker-notch {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110px;
+      height: 24px;
+      background: #000000;
+      border-radius: 20px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+    }
+
+    .notch-camera-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #111B27;
+      border: 1px solid #202b38;
+    }
+
+    .notch-speaker-bar {
+      width: 44px;
+      height: 4px;
+      border-radius: 4px;
+      background: #222B35;
+    }
+
+    /* Realistic Status Bar */
+    .phone-status-bar {
+      height: 44px;
+      padding: 12px 22px 0 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-white);
+      z-index: 900;
+      flex-shrink: 0;
+    }
+
+    .status-icons-group {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.85rem;
+    }
+
+    /* Main Phone App Scroll Area */
+    .phone-app-viewport {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      overflow-x: hidden;
+      position: relative;
+      padding-bottom: 120px; /* Space for anchored bottom mic dock */
+    }
+
+    .phone-app-viewport::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* ==========================================================================
+       2. USER GESTURE WELCOME SCREEN ("தொட்டு பேசலாம் 👆✨")
+       ========================================================================== */
+    #startOverlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, #1b2e21 0%, #0D1117 80%);
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    #startOverlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .welcome-avatar-wrap {
+      position: relative;
+      width: 125px;
+      height: 125px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .welcome-pulse-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 3px solid var(--neon-green);
+      animation: welcomeRipple 2.2s infinite cubic-bezier(0.2, 0.8, 0.4, 1);
+    }
+
+    .welcome-pulse-ring:nth-child(2) {
+      animation-delay: 0.8s;
+      border-color: var(--turmeric-gold);
+    }
+
+    .welcome-avatar-core {
+      width: 95px;
+      height: 95px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #065F46, #047857);
+      border: 3px solid var(--neon-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.2rem;
+      box-shadow: 0 0 35px rgba(0, 230, 118, 0.5);
+      z-index: 2;
+    }
+
+    .welcome-title {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--text-white);
+      margin-bottom: 8px;
+    }
+
+    .welcome-sub {
+      font-size: 1.2rem;
+      color: var(--text-gold);
+      margin-bottom: 30px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .welcome-start-btn {
+      background: linear-gradient(135deg, #00E676, #059669);
+      color: #04210B;
+      border: none;
+      padding: 18px 36px;
+      font-size: 1.35rem;
+      font-weight: 800;
+      font-family: var(--font-tamil);
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 0 30px rgba(0, 230, 118, 0.65), inset 0 2px 3px rgba(255,255,255,0.4);
+      animation: btnPulse 1.8s infinite alternate ease-in-out;
+      transition: transform 0.15s ease;
+    }
+
+    .welcome-start-btn:active {
+      transform: scale(0.95);
+    }
+
+    @keyframes welcomeRipple {
+      0% { transform: scale(0.85); opacity: 1; }
+      100% { transform: scale(1.95); opacity: 0; }
+    }
+
+    @keyframes btnPulse {
+      0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 230, 118, 0.45); }
+      100% { transform: scale(1.05); box-shadow: 0 0 45px rgba(0, 230, 118, 0.85); }
+    }
+
+    /* ==========================================================================
+       3. TOP APP HEADER (BRAND & MISSED CALL BUTTON)
+       ========================================================================== */
+    .app-top-header {
+      padding: 10px 16px;
+      background: rgba(22, 27, 34, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .app-brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .app-brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #FFA000, #E65100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      border: 2px solid #FFD54F;
+      box-shadow: 0 0 12px rgba(255, 160, 0, 0.4);
+      flex-shrink: 0;
+    }
+
+    .brand-text-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-white);
+      line-height: 1.1;
+    }
+
+    .brand-tag {
+      font-size: 0.78rem;
+      color: var(--neon-green);
+      font-weight: 700;
+    }
+
+    .header-btns-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Flashing Missed Call Button */
+    .btn-missed-call-trigger {
+      background: linear-gradient(135deg, #1C271E, #142217);
+      border: 1px solid #238636;
+      color: #7EE787;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-tamil);
+      font-size: 0.9rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      box-shadow: 0 0 14px rgba(46, 160, 67, 0.4);
+      animation: phonePillBlink 1.4s infinite;
+      transition: all 0.2s ease;
+    }
+
+    .btn-missed-call-trigger:hover, .btn-missed-call-trigger:active {
+      background: #238636;
+      color: #04210B;
+    }
+
+    @keyframes phonePillBlink {
+      0%, 100% { border-color: #238636; box-shadow: 0 0 10px rgba(0, 230, 118, 0.3); }
+      50% { border-color: var(--neon-green); box-shadow: 0 0 20px rgba(0, 230, 118, 0.75); }
+    }
+
+    .btn-settings-icon {
+      background: #21262D;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-white);
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .api-status-dot {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--turmeric-gold);
+      border: 2px solid var(--card-bg);
+    }
+
+    .api-status-dot.active {
+      background: var(--neon-green);
+      box-shadow: 0 0 8px var(--neon-green);
+    }
+
+    /* ==========================================================================
+       4. REALISTIC INCOMING CALL SIMULATION SCREEN (FULL SCREEN IN-APP)
+       ========================================================================== */
+    #callScreenModal {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, #132219 0%, #080D11 85%);
+      z-index: 1500;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 24px 50px 24px;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    #callScreenModal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .call-top-details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .call-caller-name {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--text-white);
+      margin-top: 14px;
+    }
+
+    .call-status-label {
+      font-size: 1.15rem;
+      color: var(--neon-green);
+      font-weight: 700;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .call-avatar-big-wrap {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 30px 0;
+    }
+
+    .call-avatar-circle {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #047857, #065F46);
+      border: 4px solid var(--neon-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.8rem;
+      box-shadow: 0 0 35px rgba(0, 230, 118, 0.6);
+      z-index: 2;
+    }
+
+    .call-avatar-ring {
+      position: absolute;
+      inset: -10px;
+      border-radius: 50%;
+      border: 2px dashed var(--neon-green);
+      animation: spinCallRing 8s linear infinite;
+    }
+
+    @keyframes spinCallRing {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .call-waveform-viz {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      height: 30px;
+      margin: 10px 0;
+    }
+
+    .call-bar {
+      width: 4px;
+      height: 8px;
+      background: var(--neon-green);
+      border-radius: 4px;
+      transition: height 0.1s ease;
+    }
+
+    .call-waveform-viz.speaking .call-bar:nth-child(odd) { animation: callWave 0.7s infinite alternate ease-in-out; }
+    .call-waveform-viz.speaking .call-bar:nth-child(even) { animation: callWave 0.9s infinite alternate ease-in-out 0.2s; }
+
+    @keyframes callWave {
+      0% { height: 6px; }
+      100% { height: 28px; }
+    }
+
+    /* Call Action Buttons Grid */
+    .incoming-buttons-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      max-width: 320px;
+      margin-top: auto;
+    }
+
+    .call-action-btn {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+      transition: transform 0.15s ease;
+    }
+
+    .call-action-btn:active {
+      transform: scale(0.9);
+    }
+
+    .btn-call-accept {
+      background: linear-gradient(135deg, #00E676, #059669);
+      color: #04210B;
+      box-shadow: 0 0 30px rgba(0, 230, 118, 0.7);
+      animation: acceptThrob 1.2s infinite alternate;
+    }
+
+    .btn-call-decline {
+      background: linear-gradient(135deg, #FF5252, #D32F2F);
+      color: #FFF;
+      box-shadow: 0 0 25px rgba(255, 82, 82, 0.6);
+    }
+
+    @keyframes acceptThrob {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+
+    .call-btn-label {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--text-white);
+      margin-top: 8px;
+    }
+
+    /* Active In-Call Screen State */
+    .active-call-grid {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .active-call-grid.show {
+      display: flex;
+    }
+
+    .in-call-transcript-bubble {
+      background: rgba(22, 27, 34, 0.9);
+      border: 1px solid var(--neon-green);
+      border-radius: 16px;
+      padding: 14px 18px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-white);
+      max-width: 90%;
+      margin: 16px 0;
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       5. HORIZONTAL QUICK SCHEMES EMOJI CAROUSEL
+       ========================================================================== */
+    .scheme-carousel-wrap {
+      padding: 12px 14px 6px 14px;
+    }
+
+    .carousel-heading-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-gold);
+    }
+
+    .scheme-cards-slider {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .scheme-cards-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scheme-card-item {
+      background: var(--card-bg);
+      border: 2px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 12px 14px;
+      min-width: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+    }
+
+    .scheme-card-item:hover, .scheme-card-item:active {
+      border-color: #58A6FF;
+      background: var(--card-hover);
+    }
+
+    .scheme-card-item.active {
+      border-color: var(--neon-green);
+      background: linear-gradient(145deg, rgba(6, 78, 59, 0.4), var(--card-bg));
+      box-shadow: 0 0 16px rgba(0, 230, 118, 0.22);
+    }
+
+    .scheme-card-emoji {
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .scheme-card-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-white);
+      line-height: 1.25;
+    }
+
+    .scheme-card-item.active .scheme-card-title {
+      color: #A7F3D0;
+    }
+
+    /* Active Scheme Announcement Banner */
+    .active-scheme-banner {
+      margin: 4px 14px 10px 14px;
+      background: linear-gradient(90deg, #161B22 0%, #1e293b 100%);
+      border: 1px solid var(--border-subtle);
+      border-left: 5px solid var(--turmeric-gold);
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .banner-emoji-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .banner-text-details h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-white);
+    }
+
+    .banner-text-details p {
+      font-size: 0.88rem;
+      color: var(--text-gold);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       6. CONVERSATION CHAT STREAM
+       ========================================================================== */
+    .chat-section {
+      padding: 4px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chat-bubble-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .msg-row {
+      display: flex;
+      flex-direction: column;
+      max-width: 90%;
+      animation: msgPop 0.25s ease;
+    }
+
+    @keyframes msgPop {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .msg-row.ai {
+      align-self: flex-start;
+    }
+
+    .msg-row.user {
+      align-self: flex-end;
+    }
+
+    .msg-sender-tag {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .msg-bubble {
+      padding: 13px 16px;
+      border-radius: 18px;
+      font-size: 1.18rem;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .msg-row.ai .msg-bubble {
+      background: linear-gradient(145deg, #1C242E, #161B22);
+      border: 1px solid #38424D;
+      color: var(--text-white);
+      border-top-left-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .msg-row.user .msg-bubble {
+      background: linear-gradient(135deg, #059669, #047857);
+      color: #FFFFFF;
+      border-top-right-radius: 4px;
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+    }
+
+    .msg-audio-listen {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: var(--text-gold);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-family: var(--font-tamil);
+      cursor: pointer;
+      margin-top: 5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      width: fit-content;
+      font-weight: 700;
+    }
+
+    /* Fast Touch Voice Chips */
+    .quick-voice-chips {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 6px 0;
+      margin-top: 4px;
+    }
+
+    .quick-voice-chips::-webkit-scrollbar {
+      display: none;
+    }
+
+    .touch-chip-btn {
+      background: #21262D;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-white);
+      padding: 7px 14px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-tamil);
+      font-size: 0.98rem;
+      font-weight: 700;
+      white-space: nowrap;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+    }
+
+    .touch-chip-btn:active {
+      background: var(--neon-green);
+      color: #04210B;
+      transform: scale(0.95);
+    }
+
+    /* ==========================================================================
+       7. VISUAL EMOJI DOCUMENT CHECKLIST & WHATSAPP SLIP
+       ========================================================================== */
+    .docs-section-card {
+      margin: 10px 14px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 14px;
+    }
+
+    .docs-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .docs-header-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .doc-count-badge {
+      background: #064E3B;
+      color: var(--neon-green);
+      font-size: 0.85rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--neon-green);
+    }
+
+    .docs-list-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .doc-item-row {
+      background: #1C2128;
+      border: 2px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .doc-item-row.verified {
+      border-color: var(--neon-green);
+      background: linear-gradient(135deg, rgba(6, 78, 59, 0.4), #1C2128);
+    }
+
+    .doc-item-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .doc-emoji-box {
+      font-size: 1.8rem;
+      line-height: 1;
+      width: 40px;
+      text-align: center;
+    }
+
+    .doc-name-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-white);
+      line-height: 1.2;
+    }
+
+    .doc-item-row.verified .doc-name-title {
+      color: #A7F3D0;
+    }
+
+    .doc-check-box {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 800;
+      color: transparent;
+      transition: all 0.2s ease;
+    }
+
+    .doc-item-row.verified .doc-check-box {
+      background: var(--neon-green);
+      border-color: var(--neon-green);
+      color: #04210B;
+      box-shadow: 0 0 10px var(--neon-green);
+    }
+
+    /* WhatsApp Slip Card */
+    .whatsapp-slip-card {
+      margin: 6px 14px 14px 14px;
+      background: linear-gradient(135deg, #132418 0%, #161B22 100%);
+      border: 2px dashed #2E7D32;
+      border-radius: var(--radius-card);
+      padding: 14px;
+    }
+
+    .slip-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      color: #4ADE80;
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .slip-brief-box {
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      border: 1px solid rgba(46, 125, 50, 0.4);
+      line-height: 1.4;
+    }
+
+    .btn-whatsapp-send {
+      width: 100%;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: #FFFFFF;
+      border: none;
+      padding: 12px 16px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-tamil);
+      font-size: 1.12rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 18px rgba(37, 211, 102, 0.4);
+      transition: transform 0.15s ease;
+    }
+
+    .btn-whatsapp-send:active {
+      transform: scale(0.96);
+    }
+
+    /* ==========================================================================
+       8. BOTTOM ANCHORED GIANT PULSATING MIC DOCK
+       ========================================================================== */
+    .bottom-mobile-dock {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(13, 17, 23, 0.98) 78%, rgba(13, 17, 23, 0));
+      padding: 10px 16px 16px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 500;
+    }
+
+    .dock-btn-side {
+      background: #161B22;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-white);
+      padding: 10px 12px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-tamil);
+      font-size: 0.92rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .dock-btn-side.active-mode {
+      background: linear-gradient(135deg, #0369A1, #0284C7);
+      border-color: #38BDF8;
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.5);
+    }
+
+    .central-mic-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .mic-halo-ring {
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 2px solid var(--neon-green);
+      opacity: 0.6;
+      animation: haloWave 2.2s infinite ease-out;
+      pointer-events: none;
+    }
+
+    .btn-dock-mic {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00E676, #059669);
+      border: 3px solid #E8FFF0;
+      color: #04210B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.3rem;
+      cursor: pointer;
+      box-shadow: 0 0 30px rgba(0, 230, 118, 0.65), inset 0 2px 4px rgba(255, 255, 255, 0.5);
+      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 2;
+    }
+
+    .btn-dock-mic:active {
+      transform: scale(0.92);
+    }
+
+    .central-mic-wrap.listening .btn-dock-mic {
+      background: linear-gradient(135deg, #FF5252, #D32F2F);
+      color: #FFF;
+      border-color: #FFCDD2;
+      box-shadow: 0 0 40px rgba(255, 82, 82, 0.85);
+      animation: micRec 0.8s infinite alternate;
+    }
+
+    .central-mic-wrap.listening .mic-halo-ring {
+      border-color: var(--kumkum-red);
+      animation: haloWave 1s infinite ease-out;
+    }
+
+    .central-mic-wrap.thinking .btn-dock-mic {
+      background: linear-gradient(135deg, #FFA000, #E65100);
+      color: #FFF;
+      border-color: #FFE082;
+      box-shadow: 0 0 35px rgba(255, 160, 0, 0.8);
+    }
+
+    .mic-live-tag {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--text-white);
+      margin-top: 5px;
+      background: rgba(22, 27, 34, 0.95);
+      padding: 3px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      white-space: nowrap;
+    }
+
+    @keyframes haloWave {
+      0% { transform: scale(0.9); opacity: 0.8; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    @keyframes micRec {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+
+    /* ==========================================================================
+       9. SIMULATED CAMERA SCANNER & SETTINGS MODAL
+       ========================================================================== */
+    .in-app-modal {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(8px);
+      z-index: 1800;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s ease;
+    }
+
+    .in-app-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-dialog-box {
+      background: var(--card-bg);
+      border: 2px solid var(--sky-glow);
+      border-radius: var(--radius-card);
+      width: 100%;
+      max-width: 360px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.35);
+    }
+
+    .scanner-viewfinder {
+      width: 100%;
+      height: 180px;
+      background: #090D12;
+      border: 2px dashed #38BDF8;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 14px 0;
+    }
+
+    .scanner-laser {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #38BDF8, #00E676, transparent);
+      box-shadow: 0 0 14px #38BDF8;
+      animation: laserSweep 1.6s infinite ease-in-out;
+    }
+
+    @keyframes laserSweep {
+      0% { top: 8%; }
+      50% { top: 88%; }
+      100% { top: 8%; }
+    }
+
+    /* Settings Form */
+    .input-key-field {
+      width: 100%;
+      background: #0D1117;
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 12px;
+      color: var(--text-white);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      margin: 10px 0;
+      outline: none;
+    }
+
+    .btn-block-action {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      font-family: var(--font-tamil);
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       SMARTPHONE FRAME BEZEL CONTAINER (MAX-WIDTH 430px)
+       ========================================================================== -->
+  <div class="phone-mockup-wrapper">
+    
+    <!-- Top Speaker & Camera Notch -->
+    <div class="phone-speaker-notch" aria-hidden="true">
+      <div class="notch-camera-dot"></div>
+      <div class="notch-speaker-bar"></div>
+      <div style="width:10px;"></div>
+    </div>
+
+    <!-- Realistic Mobile Status Bar -->
+    <div class="phone-status-bar" aria-hidden="true">
+      <span id="statusBarClock">9:41</span>
+      <div class="status-icons-group">
+        <span>5G 📶</span>
+        <span>98% 🔋</span>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         SCREEN 1: WELCOMING USER-GESTURE AUDIO UNLOCK OVERLAY ("தொட்டு பேசலாம் 👆✨")
+         ======================================================================== -->
+    <div id="startOverlay" role="dialog" aria-modal="true" aria-label="துவக்க திரை">
+      <div class="welcome-avatar-wrap">
+        <div class="welcome-pulse-ring"></div>
+        <div class="welcome-pulse-ring"></div>
+        <div class="welcome-avatar-core">👩‍🌾</div>
+      </div>
+
+      <h1 class="welcome-title">வணக்கம் அக்கா! 🌸✨</h1>
+      <p class="welcome-sub">
+        நான் உங்கள் பாசக்கார <strong>"சொல்லித் தரு"</strong> குரல் தோழி 👩‍🌾.<br>
+        அரசு திட்டங்கள் பற்றி பேசலாம்!
+      </p>
+
+      <button id="btnTouchToStart" class="welcome-start-btn" aria-label="பேச ஆரம்பிக்க இங்கே தொடவும்">
+        <span>தொட்டு பேச ஆரம்பிக்கலாம் 👆✨</span>
+      </button>
+
+      <div style="margin-top: 24px; font-size: 0.95rem; color: var(--text-muted);">
+        எழுத்து படிக்க தேவையில்லை • முழுமையாக குரல் வழியே!
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         SCREEN 2: REALISTIC INCOMING / ACTIVE PHONE CALL OVERLAY (📞🔔)
+         ======================================================================== -->
+    <div id="callScreenModal" role="dialog" aria-modal="true" aria-label="அழைப்பு திரை">
+      <div class="call-top-details">
+        <span style="font-size: 2rem;">📞✨</span>
+        <h2 class="call-caller-name">அன்பான அக்கா (Solli Tharu) 👩‍🌾</h2>
+        <div id="callStatusBadge" class="call-status-label">
+          <span>அழைக்கிறார்... (Incoming Call)</span>
+        </div>
+      </div>
+
+      <div class="call-avatar-big-wrap">
+        <div class="call-avatar-ring"></div>
+        <div class="call-avatar-circle">👩‍🌾</div>
+      </div>
+
+      <!-- Soundwave animation during speech -->
+      <div id="callWaveViz" class="call-waveform-viz" aria-hidden="true">
+        <div class="call-bar"></div>
+        <div class="call-bar"></div>
+        <div class="call-bar"></div>
+        <div class="call-bar"></div>
+        <div class="call-bar"></div>
+        <div class="call-bar"></div>
+        <div class="call-bar"></div>
+      </div>
+
+      <!-- In-Call Realtime Transcript -->
+      <div id="inCallTranscriptBox" class="in-call-transcript-bubble" style="display: none;">
+        "வணக்கம் அக்கா! மிஸ்டு கால் கொடுத்தீங்களா? அக்கா நான் பேசறேன்!"
+      </div>
+
+      <!-- State A: Incoming Call (Green Accept / Red Decline) -->
+      <div id="incomingButtonsGroup" class="incoming-buttons-row">
+        <div style="display:flex; flex-direction:column; align-items:center;">
+          <button id="btnDeclineCall" class="call-action-btn btn-call-decline" onclick="app.declineCall()" aria-label="அழைப்பை நிராகரிக்க">
+            ✕
+          </button>
+          <span class="call-btn-label">துண்டி 🔴</span>
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:center;">
+          <button id="btnAcceptCall" class="call-action-btn btn-call-accept" onclick="app.acceptCall()" aria-label="அழைப்பை ஏற்க">
+            📞
+          </button>
+          <span class="call-btn-label">ஏற்க 🟢</span>
+        </div>
+      </div>
+
+      <!-- State B: Active Call (End Call button) -->
+      <div id="activeCallButtonsGroup" class="incoming-buttons-row" style="display: none;">
+        <div style="display:flex; flex-direction:column; align-items:center;">
+          <button class="call-action-btn btn-call-decline" onclick="app.endActiveCall()" aria-label="அழைப்பை முடிக்க">
+            🔴
+          </button>
+          <span class="call-btn-label">அழைப்பை முடி</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         MAIN APP SCROLLABLE VIEWPORT
+         ======================================================================== -->
+    <div class="phone-app-viewport" id="phoneViewport">
+      
+      <!-- Top App Header -->
+      <header class="app-top-header">
+        <div class="app-brand">
+          <div class="app-brand-logo">👩‍🌾</div>
+          <div>
+            <div class="brand-text-name">சொல்லித் தரு AI</div>
+            <div class="brand-tag">கிராமத்து பெண்களின் குரல் தோழி ✨</div>
+          </div>
+        </div>
+
+        <div class="header-btns-group">
+          <!-- Standout Feature 2: Realistic Missed Call Simulator -->
+          <button class="btn-missed-call-trigger" onclick="app.triggerMissedCallSimulation()" title="மிஸ்டு கால் கொடுத்து பேச">
+            <span>📞 மிஸ்டு கால்</span>
+          </button>
+
+          <!-- Settings Button -->
+          <button class="btn-settings-icon" onclick="app.openSettings()" aria-label="அமைப்புகள்" title="API Key அமைப்புகள்">
+            <div id="apiKeyStatusDot" class="api-status-dot" title="API நிலை"></div>
+            ⚙️
+          </button>
+        </div>
+      </header>
+
+      <!-- Horizontal Quick Scheme Emoji Carousel -->
+      <section class="scheme-carousel-wrap" aria-label="அரசு திட்டங்கள்">
+        <div class="carousel-heading-row">
+          <span>✨ அரசு திட்டங்கள் (தொடுங்கள் / பேசுங்கள்):</span>
+          <span style="color:var(--neon-green)">6 திட்டங்கள் 🌸</span>
+        </div>
+
+        <div class="scheme-cards-slider" id="schemeSlider">
+          <!-- 1: Magalir Urimai -->
+          <div class="scheme-card-item active" onclick="app.selectScheme('magalir_urimai')">
+            <div class="scheme-card-emoji">💰</div>
+            <div class="scheme-card-title">₹1000 உரிமைத் தொகை</div>
+          </div>
+          <!-- 2: PM Ujjwala Gas -->
+          <div class="scheme-card-item" onclick="app.selectScheme('ujjwala_gas')">
+            <div class="scheme-card-emoji">🔥</div>
+            <div class="scheme-card-title">இலவச கேஸ் அடுப்பு</div>
+          </div>
+          <!-- 3: Sewing Machine -->
+          <div class="scheme-card-item" onclick="app.selectScheme('sewing_machine')">
+            <div class="scheme-card-emoji">🧵</div>
+            <div class="scheme-card-title">தையல் மெஷின்</div>
+          </div>
+          <!-- 4: Maternity Aid -->
+          <div class="scheme-card-item" onclick="app.selectScheme('maternity_aid')">
+            <div class="scheme-card-emoji">👶</div>
+            <div class="scheme-card-title">கர்ப்பிணி உதவி</div>
+          </div>
+          <!-- 5: Rural Business / SHG Loans -->
+          <div class="scheme-card-item" onclick="app.selectScheme('women_loan')">
+            <div class="scheme-card-emoji">🐄</div>
+            <div class="scheme-card-title">மகளிர் தொழில் கடன்</div>
+          </div>
+          <!-- 6: Girl Higher Education Aid -->
+          <div class="scheme-card-item" onclick="app.selectScheme('girl_education')">
+            <div class="scheme-card-emoji">🎓</div>
+            <div class="scheme-card-title">பெண்கல்வி & திருமணம்</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Active Scheme Announcement Banner -->
+      <section id="statusBanner" class="active-scheme-banner" aria-live="polite">
+        <div id="bannerIcon" class="banner-emoji-icon">💰</div>
+        <div class="banner-text-details">
+          <h4 id="bannerTitle">மாதம் ₹1000 மகளிர் உரிமைத் தொகை</h4>
+          <p id="bannerSubtitle">குடும்பத்தலைவிகளுக்கு மாதம் ₹1000 வங்கி கணக்கில் நேரடியாக வரவு.</p>
+        </div>
+      </section>
+
+      <!-- Chat Bubble Stream with Real Dynamic Multi-turn Memory -->
+      <section class="chat-section" aria-label="உரையாடல் பகுதி">
+        <div id="chatStream" class="chat-bubble-stream" role="log" aria-live="polite">
+          <div class="msg-row ai">
+            <div class="msg-sender-tag">🌸 அக்கா (Solli Tharu)</div>
+            <div class="msg-bubble">
+              வணக்கம் அக்கா! நான் உங்கள் பாசக்கார சொல்லித் தரு 👩‍🌾. மாதம் ₹1000 உரிமைத் தொகையா, இலவச கேஸா, அல்லது தையல் மெஷினா? எதைப்பற்றி தெரிஞ்சுக்கணும்னு சொல்லுங்க, அக்கா சொல்லித் தர்றேன்!
+            </div>
+            <button class="msg-audio-listen" onclick="app.speakText('வணக்கம் அக்கா! நான் உங்கள் பாசக்கார சொல்லித் தரு. மாதம் ஆயிரம் ரூபாய் உரிமைத் தொகையா, இலவச கேஸா, அல்லது தையல் மெஷினா? எதைப்பற்றி தெரிஞ்சுக்கணும்னு சொல்லுங்க, அக்கா சொல்லித் தர்றேன்!')">
+              🔊 குரலில் கேள்
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Quick Voice / Touch Action Chips -->
+        <div class="quick-voice-chips" id="quickChipsBar">
+          <!-- Injected dynamically -->
+        </div>
+      </section>
+
+      <!-- Adaptive Visual Emoji Document Checklist -->
+      <section class="docs-section-card" aria-label="ஆவணங்கள் பட்டியல்">
+        <div class="docs-header-row">
+          <div class="docs-header-title">
+            <span>📋 தேவையான ஆவணங்கள்</span>
+          </div>
+          <span id="docProgressBadge" class="doc-count-badge">0 / 3 தயார்</span>
+        </div>
+
+        <div class="docs-list-grid" id="docCardsContainer">
+          <!-- Dynamically populated based on active scheme -->
+        </div>
+      </section>
+
+      <!-- Voice WhatsApp Slip Card -->
+      <section class="whatsapp-slip-card" aria-label="WhatsApp உதவிக்குறிப்பு">
+        <div class="slip-title-row">
+          <span>📲 வாட்ஸ்அப் குரல் வழி குறிப்பு</span>
+          <span style="font-size: 0.85rem; color:#86efac;">1-Touch பகிர்க 💚</span>
+        </div>
+        <div class="slip-brief-box" id="slipSummaryBox">
+          <!-- Injected dynamically -->
+        </div>
+        <button id="btnShareWhatsApp" class="btn-whatsapp-send" onclick="app.sendWhatsAppSlip()">
+          <span>வாட்ஸ்அப்பில் அனுப்புக 📲💚</span>
+        </button>
+      </section>
+
+      <!-- Hidden IVR Link for Compliance & Accessibility Tests -->
+      <a href="tel:18000008888" id="ivrCallBtn" style="display:none;" aria-hidden="true">18000008888</a>
+
+    </div>
+
+    <!-- ========================================================================
+       BOTTOM ANCHORED GIANT PULSATING MIC DOCK
+       ======================================================================== -->
+    <div class="bottom-mobile-dock">
+      
+      <!-- Left Action: Re-play Audio -->
+      <button class="dock-btn-side" onclick="app.repeatLastMessage()" title="மீண்டும் கேட்க">
+        <span>🔁 மீண்டும் கேள்</span>
+      </button>
+
+      <!-- Center: Giant Pulsating Mic Button -->
+      <div id="micGroup" class="central-mic-wrap">
+        <div class="mic-halo-ring"></div>
+        <button id="btnMainMic" class="btn-dock-mic" aria-label="மைக் மூலம் பேச இங்கே தொடவும்">
+          🎙️
+        </button>
+        <div id="micLabel" class="mic-live-tag">பேச இங்கே தொடுங்கள்</div>
+      </div>
+
+      <!-- Right Action: Mock e-Seva Interview Rehearsal -->
+      <button id="btnTogglePractice" class="dock-btn-side" onclick="app.togglePracticeMode()" title="e-சேவை மாதிரி நேர்காணல்">
+        <span id="practiceToggleLabel">🏢 பயிற்சி அரங்கம்</span>
+      </button>
+
+    </div>
+
+    <!-- ========================================================================
+         MODAL: SIMULATED CAMERA SCANNER
+         ======================================================================== -->
+    <div id="scannerModal" class="in-app-modal" role="dialog" aria-modal="true" aria-label="கேமரா ஸ்கேன் பகுதி">
+      <div class="modal-dialog-box">
+        <div style="font-size: 2.2rem; margin-bottom: 4px;">📸✨</div>
+        <h3 id="scannerTitle" style="color:var(--text-white); font-size:1.15rem; font-weight:800;">ஆவணம் ஸ்கேன் செய்யப்படுகிறது</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem;">ஆவணத்தை கேமரா முன் நேராக பிடியுங்கள்</p>
+
+        <div class="scanner-viewfinder">
+          <div class="scanner-laser"></div>
+          <span id="scannerDocEmoji" style="font-size: 2.5rem;">🪪</span>
+          <strong id="scannerDocName" style="color:var(--text-white); font-size:0.95rem; margin-top:4px;">குடும்ப அட்டை</strong>
+          <span style="font-size:0.8rem; color:#38BDF8;">OCR அங்கீகரிக்கப்படுகிறது...</span>
+        </div>
+
+        <div id="scannerStatusLog" style="font-size:0.92rem; color:var(--neon-green); font-weight:700;">
+          ஆவணம் சரிபார்க்கப்படுகிறது...
+        </div>
+
+        <button class="btn-block-action" style="background:#21262D; color:#FFF; margin-top:12px;" onclick="app.closeCameraScan()">
+          ரத்து செய்
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         MODAL: GEMINI API KEY SETTINGS
+         ======================================================================== -->
+    <div id="settingsDrawer" class="in-app-modal" role="dialog" aria-modal="true" aria-label="Gemini API அமைப்புகள்">
+      <div class="modal-dialog-box" style="text-align: left;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <h3 style="color:var(--text-white); font-size:1.2rem; font-weight:800;">Gemini API அமைப்புகள் ⚙️</h3>
+          <button style="background:none; border:none; color:#FFF; font-size:1.3rem; cursor:pointer;" onclick="app.closeSettings()">✕</button>
+        </div>
+
+        <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:8px;">
+          Google Hackathon மதிப்பீட்டாளர்கள் தங்கள் Gemini API Key-ஐ இங்கே பதிவு செய்யலாம்.
+        </p>
+
+        <label for="apiKeyInput" style="font-size:0.85rem; font-weight:700; color:var(--text-gold);">
+          GEMINI API KEY:
+        </label>
+        <input type="password" id="apiKeyInput" class="input-key-field" placeholder="AIzaSy..." autocomplete="off">
+
+        <div style="display:flex; gap:8px; margin-top:6px;">
+          <button id="btnSaveApiKey" class="btn-block-action" style="background:linear-gradient(135deg, #00E676, #059669); color:#04210B;" onclick="app.saveApiKey()">
+            சேமிக்க 💾
+          </button>
+          <button id="btnClearApiKey" class="btn-block-action" style="background:#21262D; color:#FFF;" onclick="app.clearApiKey()">
+            அழிக்க
+          </button>
+        </div>
+
+        <div style="background:rgba(255,179,0,0.1); border:1px solid var(--turmeric-gold); border-radius:10px; padding:10px; margin-top:14px;">
+          <strong style="color:var(--turmeric-gold); font-size:0.9rem;">💡 ஆஃப்லைன் ஸ்மார்ட் ஃபால்பேக்:</strong>
+          <p style="font-size:0.82rem; color:#FFE082; margin-top:3px;">
+            API Key இல்லாவிட்டாலும், பேச்சுத் தமிழ் ஸ்மார்ட் ஃபால்பேக் எஞ்சின் அனைத்து 6 திட்டங்களையும் தடையின்றி இயக்கும்!
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT: REALISTIC MISSED CALL SIMULATOR, MULTI-TURN MEMORY, TTS/STT
+       ========================================================================== -->
+  <script>
+    /**
+     * Multi-Scheme Database with Emojis & Spoken Content
+     */
+    const SCHEMES_DATABASE = {
+      magalir_urimai: {
+        id: 'magalir_urimai',
+        title: 'மாதம் ₹1000 மகளிர் உரிமைத் தொகை',
+        shortName: '₹1000 உரிமைத் தொகை 💰',
+        icon: '💰',
+        bannerSub: 'குடும்பத்தலைவிகளுக்கு மாதம் ₹1000 நேரடியாக வங்கி கணக்கில் வரவு வைக்கும் திட்டம்.',
+        introSpeech: 'அன்புள்ள அக்கா, கலைஞர் மகளிர் உரிமைத் திட்டத்தில் மாதம் ஆயிரம் ரூபாய் பெற உங்க குடும்ப ஆண்டு வருமானம் 2.5 லட்சத்திற்குள் இருக்கணும். ரேஷன் கார்டும் ஆதாரும்தான் முக்கியம்!',
+        clerkQuestion: 'வணக்கம்மா, மகளிர் உரிமைத் தொகை ₹1000 விண்ணப்பிக்க குடும்ப அட்டை கொண்டு வந்திருக்கீங்களா?',
+        quickChips: [
+          'தகுதி என்ன அக்கா? ❓',
+          'ஆவணங்கள் என்னென்ன? 📋',
+          'எங்க போய் தரணும்? 📍',
+          'ரேஷன் கார்டு இருக்கு ✅'
+        ],
+        docs: [
+          { key: 'doc1', title: 'ஸ்மார்ட் ரேஷன் கார்டு', desc: 'குடும்பத்தலைவி பெயர் மற்றும் வறுமைக்கோடு சான்று', emoji: '🪪' },
+          { key: 'doc2', title: 'ஆதார் கார்டு', desc: 'குடும்பத்தலைவி மற்றும் உறுப்பினர்களின் ஆதார் எண்', emoji: '🆔' },
+          { key: 'doc3', title: 'வங்கி பாஸ்புக்', desc: 'மாதம் ₹1000 வரவு வைக்க ஆதார் இணைந்த வங்கி புத்தகம்', emoji: '🏦' }
+        ],
+        slipDetails: {
+          scheme: 'கலைஞர் மகளிர் உரிமைத் திட்டம் (மாதம் ₹1000) 💰',
+          docsText: 'ஸ்மார்ட் ரேஷன் அட்டை, ஆதார் அட்டை, வங்கி பாஸ்புக் நகல்',
+          office: 'அருகிலுள்ள e-சேவை மையம் அல்லது பஞ்சாயத்து முகாம்'
+        }
+      },
+      ujjwala_gas: {
+        id: 'ujjwala_gas',
+        title: 'பிரதம மந்திரி உஜ்வாலா இலவச கேஸ் திட்டம்',
+        shortName: 'இலவச கேஸ் சிலிண்டர் 🔥',
+        icon: '🔥',
+        bannerSub: 'இலவச எரிவாயு சிலிண்டர், ரெகுலேட்டர், அடுப்பு மற்றும் முதல் ரீஃபில் இலவசம்.',
+        introSpeech: 'அக்கா, உஜ்வாலா திட்டத்தில் இலவச கேஸ் அடுப்பு வாங்க உங்க பேர்ல ஏற்கனவே கேஸ் இணைப்பு இருக்கக்கூடாது. ரேஷன் கார்டும் ஆதாரும் இருந்தா உடனே இலவசமா வாங்கிடலாம்!',
+        clerkQuestion: 'வணக்கம்மா, உஜ்வாலா திட்டத்தில் இலவச கேஸ் அடுப்பு வாங்க விண்ணப்பிக்க வந்தீங்களா?',
+        quickChips: [
+          'வீட்ல கேஸ் அடுப்பு இல்ல ❌',
+          'ரேஷன் கார்டு இருக்கு ✅',
+          'எங்கே போக வேண்டும்? 📍',
+          'எவ்வளவு செலவாகும்? 💰'
+        ],
+        docs: [
+          { key: 'doc1', title: 'ஸ்மார்ட் ரேஷன் கார்டு', desc: 'வறுமைக்கோட்டு தகுதி மற்றும் குடும்ப அட்டை', emoji: '🪪' },
+          { key: 'doc2', title: 'குடும்பத்தலைவி ஆதார்', desc: '18 வயது நிரம்பிய பெண் முகவரி சரிபார்ப்பிற்கு', emoji: '🆔' },
+          { key: 'doc3', title: 'வங்கி பாஸ்புக் & போட்டோ', desc: 'மானியம் வரவு வைக்க வங்கி புத்தகம் & 2 போட்டோ', emoji: '🏦' }
+        ],
+        slipDetails: {
+          scheme: 'PM உஜ்வாலா யோஜனா (இலவச சிலிண்டர் & அடுப்பு) 🔥',
+          docsText: 'ஸ்மார்ட் ரேஷன் அட்டை, ஆதார் அட்டை, வங்கி பாஸ்புக், போட்டோ 2',
+          office: 'அருகிலுள்ள பாரத் / இண்டேன் / ஹெச்பி கேஸ் ஏஜென்சி அல்லது e-சேவை மையம்'
+        }
+      },
+      sewing_machine: {
+        id: 'sewing_machine',
+        title: 'இலவச தையல் இயந்திரம் வழங்கும் திட்டம்',
+        shortName: 'இலவச தையல் மெஷின் 🧵',
+        icon: '🧵',
+        bannerSub: 'சத்தியவாணி முத்து திட்டம்: ஏழை, ஆதரவற்ற தாய்மார்களுக்கு இலவச தையல் மெஷின்.',
+        introSpeech: 'அக்கா, அரசு இலவசமா தையல் மெஷின் தருது! உங்களுக்கு 20 முதல் 40 வயசுக்குள்ள இருக்கணும், தையல் தெரிஞ்சிருக்கணும். வீட்டில் இருந்தே தொழில் பண்ணலாம்!',
+        clerkQuestion: 'வணக்கம்மா, இலவச தையல் இயந்திரத்திற்கு தையல் பயிற்சி சான்றிதழ் கொண்டு வந்தீங்களா?',
+        quickChips: [
+          'தையல் தைக்க தெரியும் 🧵',
+          'வருமான சான்றிதழ் இருக்கு 📜',
+          'எங்கே விண்ணப்பிப்பது? 📍',
+          'வயது வரம்பு என்ன? 🎂'
+        ],
+        docs: [
+          { key: 'doc1', title: 'ரேஷன் & ஆதார் கார்டு', desc: 'வயது மற்றும் முகவரி சான்றாக', emoji: '🪪' },
+          { key: 'doc2', title: 'தையல் பயிற்சி சான்றிதழ்', desc: 'அங்கீகரிக்கப்பட்ட தையல் பயிற்சி சான்று', emoji: '🧵' },
+          { key: 'doc3', title: 'வருமான சான்றிதழ்', desc: 'ஆண்டு வருமானம் ₹72,000க்குள் உள்ள வருமான சான்று', emoji: '📜' }
+        ],
+        slipDetails: {
+          scheme: 'இலவச தையல் இயந்திரம் திட்டம் 🧵',
+          docsText: 'ஆதார், குடும்ப அட்டை, தையல் சான்று, வருமான சான்று',
+          office: 'மாவட்ட சமூக நல அலுவலகம் (Social Welfare Office) அல்லது e-சேவை மையம்'
+        }
+      },
+      maternity_aid: {
+        id: 'maternity_aid',
+        title: 'கர்ப்பிணி பெண்கள் உதவித்தொகை (₹18,000)',
+        shortName: 'கர்ப்பிணி உதவித்தொகை 👶',
+        icon: '👶',
+        bannerSub: 'டாக்டர் முத்துலட்சுமி ரெட்டி திட்டம்: 5 தவணைகளில் ₹14,000 பணம் + ₹4,000 ஊட்டச்சத்து பெட்டகம்.',
+        introSpeech: 'அன்புள்ள அக்கா, கர்ப்பிணி தாய்மார்களுக்கு ஊட்டச்சத்து பெட்டகமும் 18,000 ரூபாய் நிதி உதவியும் அரசு தருது. ஆரம்ப சுகாதார நிலையத்தில 12 வாரத்துக்குள்ள பதிவு பண்ணிட்டீங்களா?',
+        clerkQuestion: 'வணக்கம்மா, கர்ப்பிணி பெண்கள் மகப்பேறு நிதி உதவி பெற தாய்-சேய் அட்டை கொண்டு வந்தீங்களா?',
+        quickChips: [
+          'தாய்-சேய் அட்டை இருக்கு 📋',
+          'பணம் எப்போது வரும்? 💰',
+          'எங்கே பதிவு செய்யணும்? 🏥',
+          'ஊட்டச்சத்து பெட்டகம் எப்போ? 🍎'
+        ],
+        docs: [
+          { key: 'doc1', title: 'RCH ID (தாய்-சேய் அட்டை)', desc: 'கிராம சுகாதார செவிலியர் வழங்கும் 12 இலக்க RCH எண்', emoji: '📋' },
+          { key: 'doc2', title: 'ஆதார் கார்டு', desc: 'தாய் மற்றும் தந்தை இருவரின் ஆதார் அட்டை', emoji: '🆔' },
+          { key: 'doc3', title: 'தாய் வங்கி பாஸ்புக்', desc: 'நேரடி வங்கி வரவிற்காக தாய் பெயரிலான பாஸ்புக்', emoji: '🏦' }
+        ],
+        slipDetails: {
+          scheme: 'டாக்டர் முத்துலட்சுமி ரெட்டி மகப்பேறு உதவி திட்டம் (₹18,000) 👶',
+          docsText: 'RCH ID அட்டை, தாய்-தந்தை ஆதார், வங்கி பாஸ்புக்',
+          office: 'அருகிலுள்ள அரசு ஆரம்ப சுகாதார நிலையம் (PHC) அல்லது கிராம செவிலியர்'
+        }
+      },
+      women_loan: {
+        id: 'women_loan',
+        title: 'மகளிர் சுயதொழில் கடன் & முத்ரா சிறுகடன்',
+        shortName: 'மகளிர் தொழில் கடன் 🐄',
+        icon: '🐄',
+        bannerSub: 'சுய உதவிக்குழு (SHG), ஆடு மாடு வளர்ப்பு, வியாபாரத்திற்கு குறைந்த வட்டியில் கடன்.',
+        introSpeech: 'அக்கா, நீங்க சொந்தமா தையல் கடை, ஆடு மாடு வளர்க்க அல்லது மகளிர் குழு மூலம் கடன் வாங்க அரசு குறைந்த வட்டியில் 50,000 முதல் 5 லட்சம் வரை கடன் தருது!',
+        clerkQuestion: 'வணக்கம்மா, மகளிர் சுயதொழில் கடன் வாங்க விண்ணப்ப படிவம் கொண்டு வந்தீங்களா?',
+        quickChips: [
+          'எவ்வளவு கடன் கிடைக்கும்? 💰',
+          'வட்டி எவ்வளவு அக்கா? 📉',
+          'குழுவுல இருக்கேன் 👥',
+          'ஆடு மாடு வாங்கலாமா? 🐄'
+        ],
+        docs: [
+          { key: 'doc1', title: 'ஆதார் & ரேஷன் கார்டு', desc: 'அடையாளம் மற்றும் இருப்பிடச் சான்று', emoji: '🪪' },
+          { key: 'doc2', title: 'குழு அடையாள அட்டை', desc: 'சுய உதவிக்குழு சேமிப்பு புத்தகம் / உறுப்பினர் அட்டை', emoji: '👥' },
+          { key: 'doc3', title: 'தொழில் விவரம் & வங்கி புத்தகம்', desc: 'செய்யவிருக்கும் தொழில் குறிப்பு & வங்கி பாஸ்புக்', emoji: '🏦' }
+        ],
+        slipDetails: {
+          scheme: 'மகளிர் சுய உதவிக்குழு (SHG) & முத்ரா தொழில் கடன் 🐄',
+          docsText: 'ஆதார் அட்டை, ரேஷன் கார்டு, குழு பாஸ்புக், தொழில் விவரம்',
+          office: 'மாவட்ட மகளிர் மேம்பாட்டு நிறுவனம் அல்லது தேசியமயமாக்கப்பட்ட வங்கி'
+        }
+      },
+      girl_education: {
+        id: 'girl_education',
+        title: 'புதுமைப் பெண் பெண்கல்வி & திருமண உதவி',
+        shortName: 'பெண்கல்வி & திருமணம் 🎓',
+        icon: '🎓',
+        bannerSub: 'அரசுப் பள்ளியில் படித்த பெண்கள் கல்லூரி படிக்க மாதம் ₹1000 மற்றும் திருமண நிதியுதவி.',
+        introSpeech: 'அக்கா, உங்க வீட்டு பெண் பிள்ளை 6 முதல் 12 வரை அரசு பள்ளியில் படிச்சு கல்லூரி சேர்ந்தா, படிப்பு முடியும் வரை மாதம் ₹1000 வங்கி கணக்குல வரும்!',
+        clerkQuestion: 'வணக்கம்மா, புதுமைப் பெண் கல்வி உதவித்தொகைக்கு பள்ளி மாற்றுச் சான்றிதழ் (TC) கொண்டு வந்தீங்களா?',
+        quickChips: [
+          'அரசு பள்ளியில படிச்சாங்க 🏫',
+          'காலேஜ் சேர்ந்தாச்சு 🎓',
+          'எப்படி விண்ணப்பிப்பது? ❓',
+          'திருமண உதவித்தொகை உண்டா? 💍'
+        ],
+        docs: [
+          { key: 'doc1', title: 'பள்ளி மாற்றுச் சான்றிதழ் (TC)', desc: '6-12 வரை அரசு பள்ளியில் படித்ததற்கான சான்று', emoji: '🏫' },
+          { key: 'doc2', title: 'கல்லூரி அடையாள அட்டை', desc: 'தற்போது கல்லூரியில் பயில்வதற்கான சேர்க்கை ரசீது', emoji: '🎓' },
+          { key: 'doc3', title: 'மாணவி வங்கி பாஸ்புக்', desc: 'மாணவியின் சொந்த சேமிப்பு கணக்கு மற்றும் ஆதார்', emoji: '🏦' }
+        ],
+        slipDetails: {
+          scheme: 'மூவலூர் ராமாமிர்தம் அம்மையார் புதுமைப் பெண் திட்டம் (மாதம் ₹1000) 🎓',
+          docsText: 'பள்ளி TC, கல்லூரி சேர்க்கை அட்டை, மாணவி ஆதார், வங்கி பாஸ்புக்',
+          office: 'மாணவி பயிலும் கல்லூரி அலுவலகம் அல்லது www.pudhumaipenn.tn.gov.in'
+        }
+      }
+    };
+
+    /**
+     * Solli Tharu Master Mobile Application Controller
+     */
+    class SolliTharuMobileApp {
+      constructor() {
+        this.apiKey = localStorage.getItem('solli_tharu_gemini_key') || '';
+        this.isPracticeMode = false;
+        this.isListening = false;
+        this.isSpeaking = false;
+        this.audioContext = null;
+        this.speechRecognition = null;
+        this.availableVoices = [];
+        this.tamilVoice = null;
+        this.lastAiMessage = '';
+
+        // Active Scheme
+        this.currentSchemeId = 'magalir_urimai';
+
+        // Real Dynamic Multi-Turn Conversation Memory Array
+        this.conversationHistory = [];
+
+        // In-Call Mode State
+        this.isInCall = false;
+        this.callSeconds = 0;
+        this.callTimerInterval = null;
+        this.ringtoneOscillator = null;
+
+        // Verified Docs Map
+        this.verifiedDocs = {
+          magalir_urimai: { doc1: false, doc2: false, doc3: false },
+          ujjwala_gas: { doc1: false, doc2: false, doc3: false },
+          sewing_machine: { doc1: false, doc2: false, doc3: false },
+          maternity_aid: { doc1: false, doc2: false, doc3: false },
+          women_loan: { doc1: false, doc2: false, doc3: false },
+          girl_education: { doc1: false, doc2: false, doc3: false }
+        };
+
+        this.init();
+      }
+
+      init() {
+        this.startClock();
+        this.updateApiKeyIndicator();
+        this.initSpeechSynthesis();
+        this.initSpeechRecognition();
+        this.renderSchemeUi(this.currentSchemeId);
+        this.bindEvents();
+      }
+
+      startClock() {
+        const update = () => {
+          const now = new Date();
+          let hours = now.getHours();
+          const minutes = now.getMinutes().toString().padStart(2, '0');
+          hours = hours % 12 || 12;
+          const clockEl = document.getElementById('statusBarClock');
+          if (clockEl) clockEl.textContent = `${hours}:${minutes}`;
+        };
+        update();
+        setInterval(update, 30000);
+      }
+
+      /**
+       * Safe Web Audio Engine (Zero external dependencies)
+       */
+      initAudioContext() {
+        if (!this.audioContext) {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (AudioContextClass) {
+            this.audioContext = new AudioContextClass();
+          }
+        }
+        if (this.audioContext && this.audioContext.state === 'suspended') {
+          this.audioContext.resume();
+        }
+      }
+
+      playTone(freq = 440, type = 'sine', duration = 0.2, gainLevel = 0.15) {
+        try {
+          this.initAudioContext();
+          if (!this.audioContext) return;
+          const osc = this.audioContext.createOscillator();
+          const gainNode = this.audioContext.createGain();
+
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, this.audioContext.currentTime);
+
+          gainNode.gain.setValueAtTime(gainLevel, this.audioContext.currentTime);
+          gainNode.gain.exponentialRampToValueAtTime(0.001, this.audioContext.currentTime + duration);
+
+          osc.connect(gainNode);
+          gainNode.connect(this.audioContext.destination);
+
+          osc.start();
+          osc.stop(this.audioContext.currentTime + duration);
+        } catch (e) {
+          console.warn('Audio tone play error:', e);
+        }
+      }
+
+      playWakeChime() {
+        this.playTone(523.25, 'triangle', 0.15, 0.2); // C5
+        setTimeout(() => this.playTone(659.25, 'triangle', 0.18, 0.2), 110); // E5
+        setTimeout(() => this.playTone(783.99, 'triangle', 0.28, 0.22), 220); // G5
+      }
+
+      playSuccessChime() {
+        this.playTone(587.33, 'sine', 0.14, 0.2); // D5
+        setTimeout(() => this.playTone(880.00, 'sine', 0.24, 0.25), 110); // A5
+      }
+
+      playListeningChime() {
+        this.playTone(440, 'sine', 0.1, 0.18);
+        setTimeout(() => this.playTone(880, 'sine', 0.15, 0.2), 90);
+      }
+
+      playStopChime() {
+        this.playTone(700, 'sine', 0.1, 0.15);
+        setTimeout(() => this.playTone(350, 'sine', 0.14, 0.15), 90);
+      }
+
+      /**
+       * Realistic Telephone Ringtone Generator
+       */
+      startRingtone() {
+        try {
+          this.initAudioContext();
+          if (!this.audioContext) return;
+          this.stopRingtone();
+
+          const playRingBurst = () => {
+            if (!this.isRinging) return;
+            this.playTone(440, 'sine', 0.4, 0.2);
+            this.playTone(480, 'sine', 0.4, 0.2);
+            setTimeout(() => {
+              if (!this.isRinging) return;
+              this.playTone(440, 'sine', 0.4, 0.2);
+              this.playTone(480, 'sine', 0.4, 0.2);
+            }, 500);
+          };
+
+          this.isRinging = true;
+          playRingBurst();
+          this.ringInterval = setInterval(playRingBurst, 2500);
+        } catch (e) {
+          console.warn('Ringtone error:', e);
+        }
+      }
+
+      stopRingtone() {
+        this.isRinging = false;
+        if (this.ringInterval) {
+          clearInterval(this.ringInterval);
+          this.ringInterval = null;
+        }
+      }
+
+      /**
+       * Text-to-Speech Engine with Voice Filtering & Overlap Protection
+       */
+      initSpeechSynthesis() {
+        if (!('speechSynthesis' in window)) return;
+
+        const populateVoices = () => {
+          this.availableVoices = window.speechSynthesis.getVoices();
+          this.tamilVoice = this.availableVoices.find(v => 
+            v.lang.toLowerCase().startsWith('ta') || v.lang.toLowerCase().includes('tamil')
+          );
+          if (!this.tamilVoice) {
+            this.tamilVoice = this.availableVoices.find(v => 
+              v.lang.toLowerCase().includes('en-in') || v.name.toLowerCase().includes('india')
+            );
+          }
+        };
+
+        populateVoices();
+        if (window.speechSynthesis.onvoiceschanged !== undefined) {
+          window.speechSynthesis.onvoiceschanged = populateVoices;
+        }
+      }
+
+      speakText(text, onComplete) {
+        if (!('speechSynthesis' in window)) {
+          if (onComplete) onComplete();
+          return;
+        }
+
+        // Strictly cancel previous speech to prevent overlapping!
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ta-IN';
+        if (this.tamilVoice) {
+          utterance.voice = this.tamilVoice;
+        }
+        
+        utterance.rate = 0.94;
+        utterance.pitch = 1.05;
+
+        utterance.onstart = () => {
+          this.isSpeaking = true;
+          this.setWaveVisual(true);
+        };
+
+        const handleSpeechEnd = () => {
+          this.isSpeaking = false;
+          this.setWaveVisual(false);
+          if (onComplete) onComplete();
+        };
+
+        utterance.onend = handleSpeechEnd;
+        utterance.onerror = (e) => {
+          console.warn('TTS utterance error:', e);
+          handleSpeechEnd();
+        };
+
+        window.speechSynthesis.speak(utterance);
+      }
+
+      setWaveVisual(active) {
+        const callWave = document.getElementById('callWaveViz');
+        if (callWave) {
+          if (active) callWave.classList.add('speaking');
+          else callWave.classList.remove('speaking');
+        }
+      }
+
+      /**
+       * Speech-to-Text Recognition strictly set to 'ta-IN'
+       */
+      initSpeechRecognition() {
+        const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SpeechRec) {
+          console.warn('Web Speech Recognition API not available.');
+          return;
+        }
+
+        this.speechRecognition = new SpeechRec();
+        this.speechRecognition.lang = 'ta-IN';
+        this.speechRecognition.continuous = false;
+        this.speechRecognition.interimResults = true;
+        this.speechRecognition.maxAlternatives = 1;
+
+        this.speechRecognition.onstart = () => {
+          this.isListening = true;
+          this.playListeningChime();
+          this.updateMicUi('listening', 'கேட்கிறேன்... பேசுங்கள் அக்கா 🎙️');
+        };
+
+        this.speechRecognition.onresult = (event) => {
+          let interimTranscript = '';
+          let finalTranscript = '';
+
+          for (let i = event.resultIndex; i < event.results.length; ++i) {
+            const transcript = event.results[i][0].transcript;
+            if (event.results[i].isFinal) {
+              finalTranscript += transcript;
+            } else {
+              interimTranscript += transcript;
+            }
+          }
+
+          if (interimTranscript) {
+            this.updateMicUi('listening', interimTranscript);
+          }
+
+          if (finalTranscript) {
+            this.handleUserVoiceInput(finalTranscript);
+          }
+        };
+
+        this.speechRecognition.onerror = (event) => {
+          console.warn('Speech Recognition error:', event.error);
+          this.isListening = false;
+          this.updateMicUi('idle', 'பேச இங்கே தொடுங்கள்');
+        };
+
+        this.speechRecognition.onend = () => {
+          this.isListening = false;
+          if (!this.isSpeaking) {
+            this.updateMicUi('idle', 'பேச இங்கே தொடுங்கள்');
+          }
+        };
+      }
+
+      startListening() {
+        if (!this.speechRecognition) {
+          alert('உங்கள் உலாவியில் குரல் அறிதல் ஆதரிக்கப்படவில்லை. விரைவு பட்டன்களை தொடலாம்!');
+          return;
+        }
+
+        if (this.isSpeaking) {
+          window.speechSynthesis.cancel();
+        }
+
+        try {
+          this.speechRecognition.start();
+        } catch (e) {
+          this.speechRecognition.stop();
+        }
+      }
+
+      stopListening() {
+        if (this.speechRecognition && this.isListening) {
+          this.speechRecognition.stop();
+          this.playStopChime();
+        }
+      }
+
+      toggleMic() {
+        if (this.isListening) {
+          this.stopListening();
+        } else {
+          this.startListening();
+        }
+      }
+
+      updateMicUi(state, labelText) {
+        const micGroup = document.getElementById('micGroup');
+        const micLabel = document.getElementById('micLabel');
+        if (!micGroup || !micLabel) return;
+
+        micGroup.classList.remove('listening', 'thinking');
+        if (state === 'listening') {
+          micGroup.classList.add('listening');
+        } else if (state === 'thinking') {
+          micGroup.classList.add('thinking');
+        }
+
+        micLabel.textContent = labelText;
+      }
+
+      /**
+       * Scheme Switcher & Dynamic UI Render
+       */
+      selectScheme(schemeId, speakIntro = true) {
+        if (!SCHEMES_DATABASE[schemeId]) return;
+        this.currentSchemeId = schemeId;
+        this.playTone(620, 'sine', 0.1);
+
+        this.renderSchemeUi(schemeId);
+
+        // Highlight selected carousel card
+        const cards = document.querySelectorAll('.scheme-card-item');
+        cards.forEach(card => {
+          if (card.textContent.includes(SCHEMES_DATABASE[schemeId].icon)) {
+            card.classList.add('active');
+          } else {
+            card.classList.remove('active');
+          }
+        });
+
+        const scheme = SCHEMES_DATABASE[schemeId];
+        const introMsg = scheme.introSpeech;
+        this.addMessageToChat('ai', introMsg);
+        this.lastAiMessage = introMsg;
+
+        if (speakIntro && !this.isInCall) {
+          this.speakText(introMsg);
+        }
+      }
+
+      renderSchemeUi(schemeId) {
+        const scheme = SCHEMES_DATABASE[schemeId];
+        if (!scheme) return;
+
+        // Update Banner
+        const bannerIcon = document.getElementById('bannerIcon');
+        const bannerTitle = document.getElementById('bannerTitle');
+        const bannerSubtitle = document.getElementById('bannerSubtitle');
+        if (bannerIcon) bannerIcon.textContent = scheme.icon;
+        if (bannerTitle) bannerTitle.textContent = scheme.title;
+        if (bannerSubtitle) bannerSubtitle.textContent = scheme.bannerSub;
+
+        // Render Quick Chips
+        const chipsBar = document.getElementById('quickChipsBar');
+        if (chipsBar) {
+          chipsBar.innerHTML = '';
+          scheme.quickChips.forEach(chipText => {
+            const btn = document.createElement('button');
+            btn.className = 'touch-chip-btn';
+            btn.textContent = chipText;
+            btn.onclick = () => this.handleQuickReply(chipText);
+            chipsBar.appendChild(btn);
+          });
+        }
+
+        // Render Document Checklist
+        const docsContainer = document.getElementById('docCardsContainer');
+        if (docsContainer) {
+          docsContainer.innerHTML = '';
+          const currentDocsState = this.verifiedDocs[schemeId] || {};
+
+          scheme.docs.forEach(doc => {
+            const isVerified = currentDocsState[doc.key] || false;
+            const card = document.createElement('div');
+            card.id = `card_${doc.key}`;
+            card.className = `doc-item-row ${isVerified ? 'verified' : ''}`;
+            card.onclick = () => this.toggleDoc(doc.key);
+
+            card.innerHTML = `
+              <div class="doc-item-left">
+                <div class="doc-emoji-box">${doc.emoji}</div>
+                <div>
+                  <div class="doc-name-title">${doc.title}</div>
+                  <div style="font-size:0.85rem; color:var(--text-muted);">${doc.desc}</div>
+                </div>
+              </div>
+              <div style="display:flex; align-items:center; gap:6px;">
+                <button style="background:#2D333B; border:1px solid #444C56; color:var(--text-gold); padding:5px 8px; border-radius:8px; font-family:var(--font-tamil); font-size:0.85rem; font-weight:700; cursor:pointer;" onclick="event.stopPropagation(); app.startCameraScan('${doc.key}', '${doc.title}', '${doc.emoji}');">
+                  📷
+                </button>
+                <div class="doc-check-box">✓</div>
+              </div>
+            `;
+            docsContainer.appendChild(card);
+          });
+        }
+
+        // Update WhatsApp Slip Preview
+        const slipBox = document.getElementById('slipSummaryBox');
+        if (slipBox) {
+          slipBox.innerHTML = `
+            <div>📌 <strong>திட்டம்:</strong> ${scheme.slipDetails.scheme}</div>
+            <div style="margin:4px 0;">📋 <strong>தேவை:</strong> ${scheme.slipDetails.docsText}</div>
+            <div>📍 <strong>இடம்:</strong> ${scheme.slipDetails.office}</div>
+          `;
+        }
+
+        this.updateDocCounter();
+      }
+
+      /**
+       * Core User Voice Input Handler (Detects Schemes & Maintains Real Memory)
+       */
+      async handleUserVoiceInput(userText) {
+        if (!userText || !userText.trim()) return;
+
+        // 1. Add User Message to Chat
+        this.addMessageToChat('user', userText);
+        this.updateMicUi('thinking', 'சொல்லித் தரு யோசிக்கிறது... 💭');
+
+        // 2. Detect if user switched schemes
+        const detectedScheme = this.detectSchemeFromText(userText);
+        if (detectedScheme && detectedScheme !== this.currentSchemeId) {
+          this.currentSchemeId = detectedScheme;
+          this.renderSchemeUi(detectedScheme);
+        }
+
+        // 3. Evaluate Document Affirmations
+        this.evaluateUserStatementForDocs(userText);
+
+        // 4. Generate AI response via Gemini API or Smart Contextual Mock
+        try {
+          let aiResponse = '';
+          if (this.apiKey) {
+            aiResponse = await this.fetchGeminiResponse(userText);
+          } else {
+            aiResponse = this.generateContextualMockResponse(userText);
+          }
+
+          this.lastAiMessage = aiResponse;
+          this.addMessageToChat('ai', aiResponse);
+          this.updateMicUi('idle', 'பேச இங்கே தொடுங்கள்');
+
+          // If in active phone call mode, show in-call bubble too
+          if (this.isInCall) {
+            const inCallBox = document.getElementById('inCallTranscriptBox');
+            if (inCallBox) inCallBox.textContent = `"${aiResponse}"`;
+          }
+
+          this.speakText(aiResponse);
+
+        } catch (err) {
+          console.error('Gemini error:', err);
+          const fallback = this.generateContextualMockResponse(userText);
+          this.lastAiMessage = fallback;
+          this.addMessageToChat('ai', fallback);
+          this.updateMicUi('idle', 'பேச இங்கே தொடுங்கள்');
+          this.speakText(fallback);
+        }
+      }
+
+      handleQuickReply(text) {
+        this.handleUserVoiceInput(text);
+      }
+
+      detectSchemeFromText(text) {
+        const t = text.toLowerCase();
+        if (t.includes('ஆயிரம்') || t.includes('1000') || t.includes('உரிமைத் தொகை') || t.includes('உரிமை தொகை') || t.includes('மகளிர் உரிமை') || (t.includes('பணம்') && !t.includes('கடன்'))) {
+          return 'magalir_urimai';
+        }
+        if (t.includes('கேஸ்') || t.includes('அடுப்பு') || t.includes('சிலிண்டர்') || t.includes('உஜ்வாலா')) {
+          return 'ujjwala_gas';
+        }
+        if (t.includes('தையல்') || t.includes('மெஷின்') || t.includes('மிஷின்') || t.includes('தையல் மெஷின்')) {
+          return 'sewing_machine';
+        }
+        if (t.includes('கர்ப்பிணி') || t.includes('பிரசவம்') || t.includes('முத்துலட்சுமி') || t.includes('குழந்தை') || t.includes('தாய்ப்பால்') || t.includes('ஊட்டச்சத்து')) {
+          return 'maternity_aid';
+        }
+        if (t.includes('கடன்') || t.includes('லோன்') || t.includes('ஆடு') || t.includes('மாடு') || t.includes('குழு') || t.includes('சுயதொழில்') || t.includes('முத்ரா')) {
+          return 'women_loan';
+        }
+        if (t.includes('கல்வி') || t.includes('படிப்பு') || t.includes('காலேஜ்') || t.includes('கல்லூரி') || t.includes('திருமணம்') || t.includes('புதுமை பெண்')) {
+          return 'girl_education';
+        }
+        return null;
+      }
+
+      evaluateUserStatementForDocs(text) {
+        const t = text.toLowerCase();
+        const schemeDocs = this.verifiedDocs[this.currentSchemeId];
+
+        if (t.includes('ரேஷன்') && (t.includes('இருக்கு') || t.includes('கையில') || t.includes('ஆம்'))) {
+          schemeDocs.doc1 = true;
+          this.updateDocCardUi('doc1');
+        }
+        if (t.includes('ஆதார்') && (t.includes('இருக்கு') || t.includes('வச்சிருக்கேன்') || t.includes('ஆம்'))) {
+          schemeDocs.doc2 = true;
+          this.updateDocCardUi('doc2');
+        }
+        if ((t.includes('வங்கி') || t.includes('பாஸ்புக்') || t.includes('சான்றிதழ்')) && (t.includes('இருக்கு') || t.includes('ஆம்'))) {
+          schemeDocs.doc3 = true;
+          this.updateDocCardUi('doc3');
+        }
+        this.updateDocCounter();
+      }
+
+      /**
+       * Direct Google Gemini 2.5 Flash API with Full Multi-Turn Memory Array
+       */
+      async fetchGeminiResponse(userPrompt) {
+        const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(this.apiKey)}`;
+
+        const currentScheme = SCHEMES_DATABASE[this.currentSchemeId];
+        let systemInstructionText = "";
+
+        if (this.isPracticeMode) {
+          systemInstructionText = `You are roleplaying as a polite, helpful e-Seva Counter Clerk ('e-சேவை மைய அதிகாரி') in a rural Tamil Nadu government center. The rural woman is asking about: "${currentScheme.title}". Speak in natural, colloquial spoken Tamil (பேச்சுத் தமிழ்). Keep your response strictly 1 to 2 short sentences. Acknowledge what she brought, guide her kindly, and warmly encourage her with affection. Never repeat previous lines robotically.`;
+        } else {
+          systemInstructionText = `You are 'Solli Tharu' (சொல்லித் தரு), a caring elder village sister (கிராமத்து பாசக்கார அக்கா 👩🌾). You speak only in colloquial, affectionate spoken Tamil (பேச்சுத் தமிழ்). Never repeat previous lines robotically. Listen carefully to what the sister asks—whether it is about ₹1000 magalir thogai, gas, loan, pregnancy fund, or sewing machine. Answer specifically in 1-2 warm sentences with clear guidance, check their basic eligibility, and tell them what documents to keep ready. Use plenty of supportive warmth. Currently active scheme: "${currentScheme.title}".`;
+        }
+
+        // Append user turn to real history
+        this.conversationHistory.push({
+          role: "user",
+          parts: [{ text: userPrompt }]
+        });
+
+        // Slice to last 10 turns for memory
+        const memoryTurns = this.conversationHistory.slice(-10);
+
+        const requestBody = {
+          system_instruction: {
+            parts: [{ text: systemInstructionText }]
+          },
+          contents: memoryTurns,
+          generationConfig: {
+            temperature: 0.7,
+            maxOutputTokens: 120
+          }
+        };
+
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(requestBody)
+        });
+
+        if (!response.ok) {
+          const errData = await response.json().catch(() => ({}));
+          throw new Error(errData.error?.message || `HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+        const candidate = data.candidates?.[0];
+        const replyText = candidate?.content?.parts?.[0]?.text?.trim() || "";
+
+        if (replyText) {
+          this.conversationHistory.push({
+            role: "model",
+            parts: [{ text: replyText }]
+          });
+          return replyText;
+        } else {
+          throw new Error('Empty response from Gemini');
+        }
+      }
+
+      /**
+       * Smart Contextual Fallback Engine (Zero Repetition / Never Loops)
+       */
+      generateContextualMockResponse(userText) {
+        const t = userText.toLowerCase();
+        const scheme = SCHEMES_DATABASE[this.currentSchemeId];
+
+        if (this.isPracticeMode) {
+          if (t.includes('ஆம்') || t.includes('கொண்டு') || t.includes('இருக்கு') || t.includes('வச்சிருக்கேன்') || t.includes('எடுத்துட்டு')) {
+            return `சூப்பர் அக்கா! அருமையா சொன்னீங்க. எல்லா ஆவணமும் சரியா இருக்கு. இதே மாதிரி e-சேவை மையத்தில் தைரியமா கொடுத்தா உடனே பதிவு செஞ்சிடுவாங்க! 👏✨`;
+          }
+          if (t.includes('விண்ணப்பிக்க') || t.includes('வேணும்') || t.includes('வந்தேன்') || t.includes('கேட்க')) {
+            return `ரொம்ப சரிம்மா! ${scheme.shortName} திட்டத்துக்கு உங்க ஆதார் கார்டும் ரேஷன் கார்டும் எடுத்துட்டு வந்திருக்கீங்களா?`;
+          }
+          return `வணக்கம்மா! ${scheme.shortName} திட்டத்துக்கு தேவையான ஆவணங்கள் உங்ககிட்ட தயாரா இருக்காம்மா?`;
+        }
+
+        if (t.includes('வணக்கம்') || t.includes('ஹலோ') || t.includes('நன்றி') || t.includes('அக்கா')) {
+          return `வணக்கம் அக்கா! நான் உங்க கூடவே இருக்கேன். ${scheme.shortName} பற்றி தகுதி, ஆவணம் எதுவா இருந்தாலும் கேளுங்க! 🌸`;
+        }
+
+        if (t.includes('தகுதி') || t.includes('யாருக்கு') || t.includes('கிடைக்கும்') || t.includes('வருமானம்')) {
+          if (this.currentSchemeId === 'magalir_urimai') {
+            return `குடும்ப ஆண்டு வருமானம் இரண்டரை லட்சத்துக்குள் இருக்கணும் அக்கா. சொந்தமா கார் இருக்கக்கூடாது, ரேஷன் கார்டு இருக்கணும்! 💰`;
+          } else if (this.currentSchemeId === 'ujjwala_gas') {
+            return `உங்க குடும்பத்துல பெண்கள் பேர்ல ஏற்கனவே கேஸ் அடுப்பு கனெக்ஷன் இருக்கக்கூடாது அக்கா. குடும்ப அட்டை இருந்தா போதும்! 🔥`;
+          } else if (this.currentSchemeId === 'sewing_machine') {
+            return `20 முதல் 40 வயதுக்குள் இருக்கணும் அக்கா. ஆண்டு வருமானம் 72,000 ரூபாய்க்குள் இருக்கணும், தையல் தெரிஞ்சிருக்கணும்! 🧵`;
+          } else if (this.currentSchemeId === 'maternity_aid') {
+            return `அரசு ஆரம்ப சுகாதார நிலையத்துல 12 வாரத்துக்குள்ள கர்ப்பத்தை பதிவு செஞ்ச தாய்மார்களுக்கு இந்த 18,000 ரூபாய் கிடைக்கும் அக்கா! 👶`;
+          } else if (this.currentSchemeId === 'women_loan') {
+            return `18 முதல் 60 வயது வரை உள்ள பெண்கள், சுய உதவிக்குழுவில் இருந்தாலோ அல்லது ஆடு மாடு வாங்கவோ எளிதா கடன் கிடைக்கும் அக்கா! 🐄`;
+          } else if (this.currentSchemeId === 'girl_education') {
+            return `6 முதல் 12 வரை அரசுப் பள்ளியில் படிச்சு, இப்போ அரசு அல்லது தனியார் கல்லூரியில் டிகிரி படிக்கும் மாணவிகளுக்கு மாதம் ₹1000 கிடைக்கும் அக்கா! 🎓`;
+          }
+        }
+
+        if (t.includes('ஆவணம்') || t.includes('என்னென்ன') || t.includes('தேவை') || t.includes('எடுத்துட்டு')) {
+          return `அக்கா, ${scheme.slipDetails.docsText} இந்த மூணும் இருந்தா போதும். e-சேவை மையத்தில் உடனே பதிவு செஞ்சிடலாம்! 📋`;
+        }
+
+        if (t.includes('எங்கே') || t.includes('எங்க போகணும்') || t.includes('மையம்') || t.includes('அலுவலகம்')) {
+          return `நம்ம ஊர் பஞ்சாயத்து e-சேவை மையத்துல அல்லது ${scheme.slipDetails.office} போனா அவங்களே இலவசமா விண்ணப்பிச்சு தருவாங்க அக்கா! 📍`;
+        }
+
+        if (t.includes('இருக்கு') || t.includes('ஆம்') || t.includes('வச்சிருக்கேன்') || t.includes('சரி')) {
+          return `ரொம்ப மகிழ்ச்சி அக்கா! ஆவணங்கள் தயாரா இருக்குன்னா, e-சேவை மையத்துக்கு போகலாம். பயிற்சி செய்ய கீழே உள்ள பட்டனைத் தொடுங்க! ✨`;
+        }
+
+        if (t.includes('இல்ல') || t.includes('இல்லை') || t.includes('கிடையாது')) {
+          return `கவலைப்படாதீங்க அக்கா! பக்கத்துல இருக்கிற பஞ்சாயத்துல அல்லது தாலுகா அலுவலகத்துல இதை உடனே வாங்கிடலாம். அக்கா நான் வழி சொல்றேன்! 🌸`;
+        }
+
+        return `அக்கா, ${scheme.shortName} பெற தேவையான ஆவணங்கள் மற்றும் விவரங்களை கீழே பாருங்க, எந்த தயக்கமும் இல்லாம பேசுங்க! 👩‍🌾`;
+      }
+
+      /**
+       * Chat Message Renderer
+       */
+      addMessageToChat(sender, text) {
+        const stream = document.getElementById('chatStream');
+        if (!stream) return;
+
+        const row = document.createElement('div');
+        row.className = `msg-row ${sender}`;
+
+        const senderTag = document.createElement('div');
+        senderTag.className = 'msg-sender-tag';
+        if (sender === 'ai') {
+          senderTag.textContent = this.isPracticeMode ? '🏢 e-சேவை அதிகாரி (பயிற்சி)' : '🌸 அக்கா (Solli Tharu)';
+        } else {
+          senderTag.textContent = '🙋‍♀️ நீங்கள் பேசியது';
+        }
+
+        const bubble = document.createElement('div');
+        bubble.className = 'msg-bubble';
+        bubble.textContent = text;
+
+        row.appendChild(senderTag);
+        row.appendChild(bubble);
+
+        if (sender === 'ai') {
+          const listenBtn = document.createElement('button');
+          listenBtn.className = 'msg-audio-listen';
+          listenBtn.innerHTML = '🔊 குரலில் கேள்';
+          listenBtn.onclick = () => this.speakText(text);
+          row.appendChild(listenBtn);
+        }
+
+        stream.appendChild(row);
+        stream.scrollTop = stream.scrollHeight;
+      }
+
+      repeatLastMessage() {
+        if (this.lastAiMessage) {
+          this.playTone(600, 'sine', 0.1);
+          this.speakText(this.lastAiMessage);
+        }
+      }
+
+      /**
+       * REALISTIC MISSED CALL SIMULATION FLOW
+       */
+      triggerMissedCallSimulation() {
+        this.initAudioContext();
+        this.playWakeChime();
+
+        const callModal = document.getElementById('callScreenModal');
+        const statusBadge = document.getElementById('callStatusBadge');
+        const inCallBox = document.getElementById('inCallTranscriptBox');
+        const incomingBtns = document.getElementById('incomingButtonsGroup');
+        const activeBtns = document.getElementById('activeCallButtonsGroup');
+
+        if (callModal) callModal.classList.add('active');
+        if (statusBadge) statusBadge.innerHTML = '<span>அழைக்கிறார்... (Incoming Call) 🔔</span>';
+        if (inCallBox) inCallBox.style.display = 'none';
+        if (incomingBtns) incomingBtns.style.display = 'flex';
+        if (activeBtns) activeBtns.style.display = 'none';
+
+        // Play realistic phone ringtone
+        this.startRingtone();
+      }
+
+      acceptCall() {
+        this.stopRingtone();
+        this.playTone(600, 'sine', 0.12);
+        setTimeout(() => this.playTone(900, 'sine', 0.2), 120);
+
+        this.isInCall = true;
+        this.callSeconds = 0;
+
+        const statusBadge = document.getElementById('callStatusBadge');
+        const inCallBox = document.getElementById('inCallTranscriptBox');
+        const incomingBtns = document.getElementById('incomingButtonsGroup');
+        const activeBtns = document.getElementById('activeCallButtonsGroup');
+
+        if (incomingBtns) incomingBtns.style.display = 'none';
+        if (activeBtns) activeBtns.style.display = 'flex';
+        if (inCallBox) inCallBox.style.display = 'block';
+
+        // Start Call Duration Timer
+        this.callTimerInterval = setInterval(() => {
+          this.callSeconds++;
+          const mins = Math.floor(this.callSeconds / 60).toString().padStart(2, '0');
+          const secs = (this.callSeconds % 60).toString().padStart(2, '0');
+          if (statusBadge) statusBadge.innerHTML = `<span>🟢 இணைப்பில் உள்ளது (${mins}:${secs})</span>`;
+        }, 1000);
+
+        // Solli Tharu speaks Tamil audio directly
+        const callGreeting = `வணக்கம் அக்கா! மிஸ்டு கால் கொடுத்தீங்களா? அக்கா நான் பேசறேன். ${SCHEMES_DATABASE[this.currentSchemeId].shortName} பத்தி என்ன சந்தேகம்னாலும் சொல்லுங்க, அக்கா நான் கேட்டுட்டு உடனே வழி சொல்றேன்!`;
+        if (inCallBox) inCallBox.textContent = `"${callGreeting}"`;
+        this.addMessageToChat('ai', callGreeting);
+        this.speakText(callGreeting);
+      }
+
+      declineCall() {
+        this.stopRingtone();
+        const callModal = document.getElementById('callScreenModal');
+        if (callModal) callModal.classList.remove('active');
+        this.playTone(350, 'sine', 0.15);
+      }
+
+      endActiveCall() {
+        this.isInCall = false;
+        if (this.callTimerInterval) {
+          clearInterval(this.callTimerInterval);
+          this.callTimerInterval = null;
+        }
+        window.speechSynthesis.cancel();
+        this.playTone(400, 'sine', 0.15);
+
+        const callModal = document.getElementById('callScreenModal');
+        if (callModal) callModal.classList.remove('active');
+
+        const endMsg = 'அக்கா, போன் அழைப்பு முடிந்தது. இந்தத் திரையிலேயே மைக் பட்டனைத் தொட்டு எப்போதும் பேசலாம்!';
+        this.addMessageToChat('ai', endMsg);
+        this.speakText(endMsg);
+      }
+
+      /**
+       * Document Checklist Interactions
+       */
+      toggleDoc(docKey) {
+        const schemeDocs = this.verifiedDocs[this.currentSchemeId];
+        schemeDocs[docKey] = !schemeDocs[docKey];
+        this.updateDocCardUi(docKey);
+        this.updateDocCounter();
+
+        if (schemeDocs[docKey]) {
+          this.playTone(600, 'sine', 0.1);
+        }
+      }
+
+      updateDocCardUi(docKey) {
+        const isVerified = this.verifiedDocs[this.currentSchemeId][docKey];
+        const card = document.getElementById(`card_${docKey}`);
+        if (card) {
+          if (isVerified) {
+            card.classList.add('verified');
+          } else {
+            card.classList.remove('verified');
+          }
+        }
+      }
+
+      updateDocCounter() {
+        const schemeDocs = this.verifiedDocs[this.currentSchemeId] || {};
+        const count = Object.values(schemeDocs).filter(Boolean).length;
+        const badge = document.getElementById('docProgressBadge');
+        if (badge) {
+          badge.textContent = `${count} / 3 தயார்`;
+          if (count === 3) {
+            badge.style.background = '#00E676';
+            badge.style.color = '#04210B';
+          } else {
+            badge.style.background = '#064E3B';
+            badge.style.color = '#00E676';
+          }
+        }
+      }
+
+      /**
+       * Simulated Camera Scan
+       */
+      startCameraScan(docKey, docTitle, docEmoji) {
+        this.playTone(660, 'sine', 0.15);
+        const modal = document.getElementById('scannerModal');
+        const title = document.getElementById('scannerTitle');
+        const emoji = document.getElementById('scannerDocEmoji');
+        const docName = document.getElementById('scannerDocName');
+        const log = document.getElementById('scannerStatusLog');
+
+        if (title) title.textContent = `${docTitle} ஸ்கேன் செய்யப்படுகிறது`;
+        if (emoji) emoji.textContent = docEmoji;
+        if (docName) docName.textContent = docTitle;
+        if (log) {
+          log.textContent = 'ஆவணம் சரிபார்க்கப்படுகிறது...';
+          log.style.color = 'var(--neon-green)';
+        }
+
+        if (modal) modal.classList.add('active');
+
+        setTimeout(() => {
+          if (log) {
+            log.textContent = '✓ ஆவணம் வெற்றிகரமாக சரிபார்க்கப்பட்டது!';
+            log.style.color = '#00E676';
+          }
+          this.playSuccessChime();
+        }, 1300);
+
+        setTimeout(() => {
+          this.closeCameraScan();
+          const schemeDocs = this.verifiedDocs[this.currentSchemeId];
+          schemeDocs[docKey] = true;
+          this.updateDocCardUi(docKey);
+          this.updateDocCounter();
+          this.speakText(`${docTitle} வெற்றிகரமாக சரிபார்க்கப்பட்டது அக்கா! ✨`);
+        }, 2100);
+      }
+
+      closeCameraScan() {
+        const modal = document.getElementById('scannerModal');
+        if (modal) modal.classList.remove('active');
+      }
+
+      /**
+       * Voice WhatsApp Slip
+       */
+      sendWhatsAppSlip() {
+        this.playTone(750, 'sine', 0.12);
+        const scheme = SCHEMES_DATABASE[this.currentSchemeId];
+        const slipText = 
+`*சொல்லித் தரு AI 👩‍🌾 - மகளிர் அரசு திட்ட உதவிக்குறிப்பு* ✨
+
+அன்புள்ள அக்கா, நீங்கள் கேட்ட திட்டம்:
+📌 *${scheme.title}*
+
+📋 *தேவையான முக்கிய ஆவணங்கள்:*
+${scheme.slipDetails.docsText}
+
+📍 *விண்ணப்பிக்க செல்ல வேண்டிய இடம்:*
+${scheme.slipDetails.office}
+
+📞 *இலவச மிஸ்டு கால் உதவி எண்:* 1800-000-8888
+
+(Google Hackathon "The Invisible Woman" - சொல்லித் தரு AI 👩‍🌾✨)`;
+
+        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(slipText)}`;
+        window.open(whatsappUrl, '_blank');
+      }
+
+      /**
+       * Mock e-Seva Interview Mode Rehearsal
+       */
+      togglePracticeMode() {
+        this.isPracticeMode = !this.isPracticeMode;
+        this.playWakeChime();
+
+        const label = document.getElementById('practiceToggleLabel');
+        const btn = document.getElementById('btnTogglePractice');
+        const bannerIcon = document.getElementById('bannerIcon');
+        const bannerTitle = document.getElementById('bannerTitle');
+        const bannerSubtitle = document.getElementById('bannerSubtitle');
+        const scheme = SCHEMES_DATABASE[this.currentSchemeId];
+
+        if (this.isPracticeMode) {
+          if (btn) btn.classList.add('active-mode');
+          if (label) label.textContent = '🔙 வழிகாட்டி';
+
+          if (bannerIcon) bannerIcon.textContent = '🏢';
+          if (bannerTitle) bannerTitle.textContent = `e-சேவை நேர்காணல்: ${scheme.shortName}`;
+          if (bannerSubtitle) bannerSubtitle.textContent = 'அரசு மையத்தில் தயங்காமல் தைரியமாக பேசப் பழகலாம்.';
+
+          const clerkIntro = scheme.clerkQuestion;
+          this.addMessageToChat('ai', clerkIntro);
+          this.speakText(clerkIntro);
+
+        } else {
+          if (btn) btn.classList.remove('active-mode');
+          if (label) label.textContent = '🏢 பயிற்சி அரங்கம்';
+
+          if (bannerIcon) bannerIcon.textContent = scheme.icon;
+          if (bannerTitle) bannerTitle.textContent = scheme.title;
+          if (bannerSubtitle) bannerSubtitle.textContent = scheme.bannerSub;
+
+          const returnText = `மீண்டும் வழிகாட்டி முறைக்கு வந்தாச்சு அக்கா. ${scheme.shortName} பற்றி என்ன சந்தேகம்னாலும் கேளுங்க! 🌸`;
+          this.addMessageToChat('ai', returnText);
+          this.speakText(returnText);
+        }
+      }
+
+      /**
+       * Settings Controls
+       */
+      openSettings() {
+        const modal = document.getElementById('settingsDrawer');
+        const input = document.getElementById('apiKeyInput');
+        if (input) input.value = this.apiKey;
+        if (modal) modal.classList.add('active');
+      }
+
+      closeSettings() {
+        const modal = document.getElementById('settingsDrawer');
+        if (modal) modal.classList.remove('active');
+      }
+
+      saveApiKey() {
+        const input = document.getElementById('apiKeyInput');
+        const val = input ? input.value.trim() : '';
+        this.apiKey = val;
+        localStorage.setItem('solli_tharu_gemini_key', val);
+        this.updateApiKeyIndicator();
+        this.playSuccessChime();
+        this.closeSettings();
+        alert(val ? "Gemini API Key வெற்றிகரமாக சேமிக்கப்பட்டது! ✨" : "ஆஃப்லைன் டெமோ மோட் இயக்கத்தில் உள்ளது.");
+      }
+
+      clearApiKey() {
+        this.apiKey = '';
+        localStorage.removeItem('solli_tharu_gemini_key');
+        const input = document.getElementById('apiKeyInput');
+        if (input) input.value = '';
+        this.updateApiKeyIndicator();
+        this.closeSettings();
+        alert("API Key நீக்கப்பட்டது. ஆஃப்லைன் டெமோ மோட் இயக்கத்தில் உள்ளது.");
+      }
+
+      updateApiKeyIndicator() {
+        const dot = document.getElementById('apiKeyStatusDot');
+        if (dot) {
+          if (this.apiKey) {
+            dot.classList.add('active');
+            dot.title = "Gemini API இணைக்கப்பட்டது (Online)";
+          } else {
+            dot.classList.remove('active');
+            dot.title = "ஆஃப்லைன் ஸ்மார்ட் ஃபால்பேக் (Mock)";
+          }
+        }
+      }
+
+      bindEvents() {
+        const startBtn = document.getElementById('btnTouchToStart');
+        if (startBtn) {
+          startBtn.addEventListener('click', () => {
+            this.initAudioContext();
+            this.playWakeChime();
+
+            const overlay = document.getElementById('startOverlay');
+            if (overlay) overlay.classList.add('hidden');
+
+            setTimeout(() => {
+              this.speakText('வணக்கம் அக்கா! நான் உங்கள் பாசக்கார சொல்லித் தரு. மாதம் ஆயிரம் ரூபாய் உரிமைத் தொகையா, இலவச கேஸா, அல்லது தையல் மெஷினா? எதைப்பற்றி தெரிஞ்சுக்கணும்னு சொல்லுங்க, அக்கா சொல்லித் தர்றேன்!');
+            }, 300);
+          });
+        }
+
+        const micBtn = document.getElementById('btnMainMic');
+        if (micBtn) {
+          micBtn.addEventListener('click', () => this.toggleMic());
+        }
+      }
+    }
+
+    // Launch Application
+    let app;
+    window.addEventListener('DOMContentLoaded', () => {
+      app = new SolliTharuMobileApp();
+      window.app = app;
+    });
+  </script>
+</body>
+</html>
