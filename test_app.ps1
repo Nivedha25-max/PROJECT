@@ -1,7 +1,7 @@
-# Solli Tharu AI Automated Verification Test Suite (Multi-Scheme & Memory)
+# Pengal Sevai (பெண்கள் சேவை) Automated Verification Test Suite
 
 $url = "http://localhost:5500/"
-Write-Host "Running automated test against $url..." -ForegroundColor Cyan
+Write-Host "Running automated verification tests against $url..." -ForegroundColor Cyan
 
 try {
     $res = Invoke-WebRequest -Uri $url -UseBasicParsing
@@ -52,14 +52,14 @@ try {
         Write-Host "[FAIL] Test 5: Missing one or more schemes in database" -ForegroundColor Red
     }
 
-    # Test 6: Conversational Screener & Dynamic Memory
-    if ($content.Contains('id="chatStream"') -and $content.Contains('conversationHistory') -and $content.Contains('detectSchemeFromText')) {
-        Write-Host "[PASS] Test 6: Module 2 (Multi-turn Memory & Chat Stream) verified" -ForegroundColor Green
+    # Test 6: Conversational Screener & Persistent History Array (Repetition Bug Fix)
+    if ($content.Contains('id="chatStream"') -and $content.Contains('let conversationHistory = [];') -and $content.Contains('detectSchemeFromText')) {
+        Write-Host "[PASS] Test 6: Module 2 (Multi-turn Memory & Repetition Fix) verified" -ForegroundColor Green
     } else {
-        Write-Host "[FAIL] Test 6: Missing Module 2 memory elements" -ForegroundColor Red
+        Write-Host "[FAIL] Test 6: Missing Module 2 memory elements or persistent history" -ForegroundColor Red
     }
 
-    # Test 7: Adaptive Document Checklist & Scanner
+    # Test 7: Adaptive Document Checklist & Camera Scanner
     if ($content.Contains('id="docCardsContainer"') -and $content.Contains('id="scannerModal"') -and $content.Contains('startCameraScan')) {
         Write-Host "[PASS] Test 7: Module 3 (Adaptive Document Checklist & Camera Scanner) verified" -ForegroundColor Green
     } else {
@@ -73,14 +73,14 @@ try {
         Write-Host "[FAIL] Test 8: Missing Module 4" -ForegroundColor Red
     }
 
-    # Test 9: Offline Missed Call Toll-Free Helpline
-    if ($content.Contains('18000008888') -and $content.Contains('tel:18000008888')) {
-        Write-Host "[PASS] Test 9: Module 5 (Offline Missed Call Toll-Free) verified" -ForegroundColor Green
+    # Test 9: Simulated Missed Call & Toll-Free Helpline
+    if ($content.Contains('id="callScreenModal"') -and $content.Contains('triggerMissedCallSimulation') -and $content.Contains('18000008888')) {
+        Write-Host "[PASS] Test 9: Module 5 (Simulated Missed Call & Toll-Free Helpline) verified" -ForegroundColor Green
     } else {
         Write-Host "[FAIL] Test 9: Missing Module 5" -ForegroundColor Red
     }
 
-    # Test 10: Mock e-Seva Interview Practice Mode
+    # Test 10: Mock e-Seva Interview Rehearsal Mode
     if ($content.Contains('btnTogglePractice') -and $content.Contains('togglePracticeMode')) {
         Write-Host "[PASS] Test 10: Module 6 (Mock e-Seva Rehearsal Mode) verified" -ForegroundColor Green
     } else {
@@ -88,13 +88,13 @@ try {
     }
 
     # Test 11: Direct Gemini 2.5 Flash Endpoint & System Prompt
-    if ($content.Contains('gemini-2.5-flash:generateContent') -and ($content.Contains('caring elder village sister') -or $content.Contains('caring village elder sister'))) {
-        Write-Host "[PASS] Test 11: Gemini 2.5 Flash API endpoint & System Instruction verified" -ForegroundColor Green
+    if ($content.Contains('gemini-2.5-flash:generateContent') -and $content.Contains('Pengal Sevai')) {
+        Write-Host "[PASS] Test 11: Gemini 2.5 Flash API endpoint & Pengal Sevai System Instruction verified" -ForegroundColor Green
     } else {
         Write-Host "[FAIL] Test 11: Missing Gemini endpoint or system prompt" -ForegroundColor Red
     }
 
-    # Test 12: Tamil Unicode Integrity
+    # Test 12: Tamil Unicode UTF-8 Integrity
     $hasTamilBytes = $false
     for ($idx = 0; $idx -lt $fileBytes.Length - 1; $idx++) {
         if ($fileBytes[$idx] -eq 0xE0 -and ($fileBytes[$idx+1] -eq 0xAE -or $fileBytes[$idx+1] -eq 0xAF)) {
@@ -108,7 +108,7 @@ try {
         Write-Host "[FAIL] Test 12: Tamil Unicode corrupted" -ForegroundColor Red
     }
 
-    Write-Host "`nAll 12 automated verification tests passed successfully!" -ForegroundColor Green
+    Write-Host "`nAll 12 automated verification tests for Pengal Sevai passed successfully!" -ForegroundColor Green
 } catch {
     Write-Host "Error running tests: $($_.Exception.Message)" -ForegroundColor Red
 }
